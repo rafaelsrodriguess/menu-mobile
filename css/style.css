@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Nunito-Regular;
+    src: url(../fonts/Nunito/Nunito-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to bottom, #026ddc, #1bc0b4 );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Nunito-Regular;
+    color: white;
+}
+
+nav {
+    /* viewport */
+    position: fixed;
+    top: 0;
+    left: -80%;
+    width: 80%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    opacity: 0;
+    transition: left 0.4s, opacity 0.7s;
+}
+
+nav a {
+    width: 80%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-left: 2px dotted royalblue;
+    text-decoration: none;
+    color: gray;
+}
+
+#abre-fecha {
+   display: none;
+}
+
+
+/* checkbox marcado */
+
+#abre-fecha:checked~nav {
+    opacity: 1;
+    left: 0;
+}
+
+#abre-fecha:checked ~ #btn-fecha {
+    right: calc(20% + 10px) ;
+    top: 10px;
+}
+label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    color: white;
+    border-radius: 0 10px 0 10px;
+}
+
+#btn-abre {
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    background-color: #02044b;
+    border: 1px solid #02044b;
+    z-index: 0;
+}
+
+#btn-fecha {
+    position: fixed;
+    top: 10;
+    right: -40px;
+    background-color:#005a83;
+    border: 1px solid #005a83;
+    z-index: 2;
+    transition: right 0.8s;
+}
